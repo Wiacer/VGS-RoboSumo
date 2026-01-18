@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0; /* Increased padding for better spacing */
+    text-align: center;
+}
+
+.logo img {
+    width: 98%;
+    height: auto;
+}
+
+.container {
+    position: absolute;
+    top: 183px; /* Adjust according to the height of your header */
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #fff;
+    padding: 10px; /* 10px padding around the container */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.arrowcontrols {
+    display: grid;
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(2, 50px);
+    gap: 10px;
+}
+
+.bttn {
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #aaa;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bttn.active {
+    background-color: lightblue;
+}
+
+#forward {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#backward {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#right {
+    grid-column: 3;
+    grid-row: 2;
+}

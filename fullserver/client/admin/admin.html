@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Admin battlebot</title>
+        
+        <script src="fiducialProcessing.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+        <script src="../janusStuff/janus.js"></script>
+        <script src="cv.js" async onload="cvLoad()">// </script>
+        <script src="aruco.js" async onload="arucoLoad()">// </script>
+        <script src="../janusStuff/receiver.js"></script>
+        
+        <style>
+            #wrapper {
+                width: 1900px;
+                border: 1px solid black;
+                overflow: hidden; /* add this to contain floated children */
+            }
+            #first {
+                width: 1300px;
+                float:left; /* add this */
+                border: 1px solid red;
+            }
+            #second {
+                border: 1px solid green;
+                float: left; /* add this */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Admin battlebot</h1>
+        <div id="wrapper">
+            <div id="first">
+                <video id="remoteVideo" autoplay muted></video>
+                <canvas id="canvas"></canvas>
+                <div>
+                    <form id="dataForm">
+                        <label for="selectField">Ring</label>
+                        <label for="inputRadius">Radius:</label>
+                        <input type="text" id="inputRadius" name="inputRadius">
+                        <br><br>
+
+                        <label for="inputxPos">xPos:</label>
+                        <input type="text" id="inputxPos" name="inputxPos">
+                        <br><br>
+                        <label for="inputyPos">yPos:</label>
+                        <input type="text" id="inputyPos" name="inputyPos">
+                        <br><br>
+                        <button type="submit">Submit</button>
+                    </form>
+                    <p id="widthTeller"></p>
+                    <p id="heightTeller"></p>
+                    
+                    <button onclick="instill()">Innstill</button>
+                    <button onclick="startGame()">Start</button>
+                </div>
+            </div>
+            <div id="second">
+                <form id="areaForm">
+                    <label for="lowerArea1">lowerArea1:</label>
+                    <input type="text" id="lowerArea1" name="lowerArea1">
+                    <br><br>
+                    <label for="upperArea1">upperArea1:</label>
+                    <input type="text" id="upperArea1" name="upperArea1">
+                    <br><br>
+
+                    <label for="lowerArea2">lowerArea2:</label>
+                    <input type="text" id="lowerArea2" name="lowerArea2">
+                    <br><br>
+                    <label for="upperArea2">upperArea2:</label>
+                    <input type="text" id="upperArea2" name="upperArea2">
+                    <br><br>
+
+                    <label for="lowerArea3">lowerArea3:</label>
+                    <input type="text" id="lowerArea3" name="lowerArea3">
+                    <br><br>
+                    <label for="upperArea3">upperArea3:</label>
+                    <input type="text" id="upperArea3" name="upperArea3">
+                    <br><br>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0; /* Increased padding for better spacing */
+    text-align: center;
+}
+
+.logo img {
+    width: 98%;
+    height: auto;
+}
+
+
+.container {
+    position: absolute;
+    top: 183px; /* Adjust according to the height of your header */
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: #fff;
+    padding: 10px; /* 10px padding around the container */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+h2 {
+    color: #333;
+}
+
+.options {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+.livestream {
+    float: left;
+    width: 55.5%;
+    margin-right: 10px; /* 10px margin between livestream and scoreboard */
+    margin-bottom: 10px; /* Add 10px margin to bottom */
+}
+
+.livestream img {
+    width: 100%; /* Ensure the image fills the container */
+    height: calc(100% - 10px);
+}
+
+.scoreboard {
+    width: 25%; /* Fixed width for the scoreboard */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds container height */
+}
+
+.player {
+    margin-bottom: 20px; /* Add margin between players */
+}
+
+.player h3 {
+    margin: 0; /* Remove margin for h3 */
+}
+
+.player p {
+    margin: 5px 0 0; /* Adjust margin for p */
+}
+
+
+.controls {
+    width: 25%; /* Change the width as desired */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds container height */
+}
+
+
+button {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectate - BattleBots</title>
+    <link rel="stylesheet" href="/style/styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script type="text/javascript" src="../janusStuff/janus.js"></script>
+    
+    
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">
+            <img src="/images/logo.png" alt="BattleBots Logo">
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="livestream">
+            <video id="remoteVideo" autoplay width="1070" height="1070"></video>
+        </div>
+        <div class="scoreboard">
+            <div class="player">
+                <h3>Name 1</h3>
+                <p>Score: 100</p>
+            </div>
+            <div class="player">
+                <h3>Name 2</h3>
+                <p>Score: 80</p>
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="spectators.js"></script>
+    <script type="text/javascript" src="../janusStuff/receiver.js"></script>
+
+</body>
+</html>

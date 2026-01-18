@@ -1,0 +1,57 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            font-size: 16px;
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    
+</head>
+    <body>
+
+        <h1>Welcome to My Simple HTML Page</h1>
+
+        <button onclick="alert('Button 1 Clicked!')">Button 1</button>
+        <button onclick="alert('Button 2 Clicked!')">Button 2</button>
+        <button onclick="alert('Button 3 Clicked!')">Button 3</button>
+        <button onclick="alert('Button 4 Clicked!')">Button 4</button>
+
+        <img id="image">
+
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io.connect('http://localhost:3000');
+            socket.on('image', (image) => {
+                //console.log('data', data);
+                const imageElm = document.getElementById('image');
+                imageElm.src = `data:image/jpeg;base64,${image}`;
+            })
+        </script>
+
+
+    </body>
+</html>

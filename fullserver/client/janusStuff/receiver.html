@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Janus WebRTC Test</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="janus.js"></script>
+</head>
+<body>
+    <h1>Janus WebRTC Test</h1>
+    <video id="localVideo" autoplay muted width="320" height="240"></video>
+    <video id="remoteVideo" autoplay width="320" height="240"></video>
+    <canvas id="remoteCanvas" width="320" height="240"></canvas>
+    <script src="receiver.js"></script>
+</body>
+</html>

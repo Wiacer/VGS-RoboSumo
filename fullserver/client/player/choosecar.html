@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players - BattleBots</title>
+    <link rel="stylesheet" href="/style/playerstyle.css">
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+</head>
+<body>
+    <header>
+        <a href="/index.html" class="logo">
+            <img src="/images/logo.png" alt="BattleBots Logo">
+        </a>
+    </header>
+
+    <div class="container">
+        <h1>Enter Your Car's ID</h1>
+        <form id="carForm">
+            <select id="carIDInput">
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        async function getRobots(file) {
+            //denne koden holder valgfeltet oppdatert
+
+            //først henter vi tilgjengelige roboter
+            let myObject = await fetch(file);
+            let myText = await myObject.text()
+            let robots = JSON.parse(myText);
+            console.log(myText)
+            //nå har vi en liste med roboter
+
+            let selectField = document.getElementById("carIDInput")
+            let options = selectField.children
+            for (let i = 0; i < robots.length; i++){
+                //vi forebereder ett valg som vi kanskje skal legge til
+                let option = document.createElement("option");
+                if(robots[i]===null){
+
+                }else{
+                    option.value = robots[i].id
+                    option.innerHTML = "robot nr "+ robots[i].id
+
+                    //så sjekker vi om valget allerede er finnes
+                    let duplicate = false
+                    for (j = 0; j < options.length; j++){
+                        if((option.value == options[j].value) || robots[i].controller != undefined){
+                            duplicate = true
+                        }
+                    }
+                    //hvis det viser seg at valget vi lagde allerede eksisterer så legger vi den ikke til
+                    if(!duplicate){
+                        selectField.appendChild(option);
+                    }
+                }
+            }
+            //vi sjekker om robotene som kan velges fortsatt er tilgjengelige
+            for (j = 0; j < options.length; j++){
+                robotAvailable = false
+                for (let i = 0; i < robots.length; i++){
+                    if(robots[i]===null){
+
+                    }else if(robots[i].id == options[j].value){
+                        robotAvailable = true
+                        if(robots[i].controller != undefined){
+                            robotAvailable = false
+                        }
+                    }
+                }
+                if(!robotAvailable){
+                    selectField.removeChild(options[j])
+                }
+            }
+            if(robots.length == 0){
+
+            }
+        }
+        setInterval(() => getRobots("https://bingusserver.duckdns.org/websock/robots?"),500)
+        document.getElementById('carForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const carID = document.getElementById('carIDInput').value.trim();
+            if (carID in [0,1]){
+                // Redirect to car info page with car name as a query parameter
+                window.location.href = `/player/players.html?carID=${encodeURIComponent(carID)}`;
+            } else {
+                alert('Please enter a valid carID.');
+            }
+        });
+        
+    </script>
+</body>
+</html>

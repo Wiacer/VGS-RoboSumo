@@ -1,0 +1,30 @@
+{
+    "name": "opencvserver",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "commonjs",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "canvas": "^2.11.2",
+        "esm": "^3.2.25",
+        "express": "^4.19.2",
+        "janode": "^1.6.11",
+        "janus-gateway": "^1.2.3",
+        "janus-gateway-js": "^2.0.2",
+        "jsdom": "^24.0.0",
+        "media-recorder-stream": "^2.2.0",
+        "node-fetch": "^2.7.0",
+        "node-pre-gyp": "^0.17.0",
+        "opencv4nodejs-prebuilt-install": "^4.1.202",
+        "socket.io": "^4.7.5",
+        "video-element": "^1.0.4",
+        "webpack": "^5.91.0",
+        "wrtc": "^0.4.7"
+    }
+}
